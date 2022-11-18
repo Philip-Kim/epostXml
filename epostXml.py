@@ -31,7 +31,7 @@ while True:
 
         tree = ET.fromstring(response.text)
 
-        currentTrees = tree.find("trackInfo").findall("detaileTrackList")
+        currentTrees = tree.findall(".//detaileTrackList")
 
         currentTreeCount = len(currentTrees)
 
