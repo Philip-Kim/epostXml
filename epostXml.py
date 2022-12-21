@@ -27,7 +27,11 @@ bot = telegram.Bot(token = telegram_token)
 
 while True:
 
-        response = requests.get(URL)
+        try:
+                response = requests.get(URL)
+        except:
+                time.sleep(300)
+                continue
 
         tree = ET.fromstring(response.text)
 
