@@ -43,6 +43,9 @@ while True:
                 for i in range(lastTreeCount, currentTreeCount):
                         date = currentTrees[i].find("date").text
                         hourMinute = currentTrees[i].find("time").text
+                        #to avoid Nonetype exception
+                        if (hourMinute is None):
+                                hourMinute = "??:??"
                         location = currentTrees[i].find("location").text
                         status = currentTrees[i].find("statue").text
 
